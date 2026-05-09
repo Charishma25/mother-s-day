@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Happy Mother's Day Amma ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  overflow-x:hidden;
+  background:linear-gradient(-45deg,#fff0f6,#ffe4ee,#fff8fb,#ffeef7);
+  background-size:400% 400%;
+  animation:bgMove 15s ease infinite;
+  color:#5a3544;
+  min-height:100vh;
+  position:relative;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+/* FLOATING HEARTS */
+
+.hearts{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:1;
+}
+
+.hearts span{
+  position:absolute;
+  bottom:-120px;
+  width:22px;
+  height:22px;
+  background:#ff77a8;
+  transform:rotate(45deg);
+  animation:floatHeart linear infinite;
+  opacity:0.55;
+}
+
+.hearts span::before,
+.hearts span::after{
+  content:'';
+  position:absolute;
+  width:22px;
+  height:22px;
+  background:#ff77a8;
+  border-radius:50%;
+}
+
+.hearts span::before{
+  top:-11px;
+  left:0;
+}
+
+.hearts span::after{
+  left:-11px;
+  top:0;
+}
+
+@keyframes floatHeart{
+  0%{
+    transform:translateY(0) rotate(45deg) scale(0.7);
+    opacity:0;
+  }
+
+  20%{
+    opacity:0.6;
+  }
+
+  100%{
+    transform:translateY(-120vh) rotate(45deg) scale(1.2);
+    opacity:0;
+  }
+}
+
+/* SPARKLES */
+
+.sparkles span{
+  position:absolute;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:white;
+  animation:twinkle 4s infinite ease-in-out;
+}
+
+@keyframes twinkle{
+  0%,100%{
+    transform:scale(0.5);
+    opacity:0.2;
+  }
+
+  50%{
+    transform:scale(1.8);
+    opacity:1;
+  }
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding:40px 20px;
+  overflow:hidden;
+  z-index:2;
+}
+
+.glow{
+  position:absolute;
+  width:350px;
+  height:350px;
+  border-radius:50%;
+  filter:blur(90px);
+  background:rgba(255,120,170,0.25);
+  animation:blob 8s infinite alternate ease-in-out;
+}
+
+.glow:nth-child(1){
+  top:-60px;
+  left:-60px;
+}
+
+.glow:nth-child(2){
+  right:-60px;
+  bottom:-60px;
+  animation-delay:2s;
+}
+
+@keyframes blob{
+  from{
+    transform:translateY(0px) translateX(0px);
+  }
+
+  to{
+    transform:translateY(-40px) translateX(40px);
+  }
+}
+
+/* ENVELOPE */
+
+.envelope-wrapper{
+  position:relative;
+  z-index:5;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.envelope{
+  width:560px;
+  height:360px;
+  position:relative;
+  cursor:pointer;
+}
+
+.envelope-back{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(135deg,#ff8eb5,#ff6d9d);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 25px 60px rgba(255,105,160,0.35);
+}
+
+.envelope-back::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+}
+
+.flap{
+  position:absolute;
+  width:100%;
+  height:200px;
+  background:#ff5c93;
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;
+  transition:1s ease;
+  z-index:6;
+}
+
+.letter{
+  position:absolute;
+  width:88%;
+  left:50%;
+  top:130px;
+  transform:translateX(-50%);
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(20px);
+  border-radius:30px;
+  padding:45px 35px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.15);
+  transition:1s cubic-bezier(.22,1,.36,1);
+  z-index:2;
+}
+
+.envelope.open .flap{
+  transform:rotateX(180deg);
+}
+
+.envelope.open .letter{
+  transform:translateX(-50%) translateY(-240px);
+}
+
+.title{
+  font-family:'Great Vibes',cursive;
+  font-size:4.5rem;
+  color:#ff4f87;
+  margin-bottom:15px;
+}
+
+.message{
+  font-size:1.12rem;
+  line-height:2rem;
+  color:#5c3d49;
+}
+
+.tap-text{
+  margin-top:40px;
+  color:#ff4f87;
+  font-size:1rem;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.06);}
+}
+
+.btn{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 30px;
+  border-radius:40px;
+  text-decoration:none;
+  background:linear-gradient(135deg,#ff5d93,#ff77ab);
+  color:white;
+  font-weight:500;
+  box-shadow:0 15px 35px rgba(255,95,149,0.3);
+  transition:0.4s ease;
+}
+
+.btn:hover{
+  transform:translateY(-3px) scale(1.04);
+}
+
+/* GALLERY */
+
+.gallery{
+  padding:120px 0;
+  position:relative;
+  z-index:2;
+}
+
+.gallery-title{
+  text-align:center;
+  font-size:3rem;
+  color:#ff4f87;
+  margin-bottom:60px;
+}
+
+.slider{
+  width:100%;
+  overflow:hidden;
+}
+
+.slide-track{
+  display:flex;
+  width:calc(380px * 10);
+  animation:scroll 28s linear infinite;
+}
+
+.slide-track:hover{
+  animation-play-state:paused;
+}
+
+.slide{
+  width:380px;
+  margin:0 18px;
+  flex-shrink:0;
+  position:relative;
+}
+
+.slide img{
+  width:100%;
+  height:500px;
+  object-fit:cover;
+  border-radius:35px;
+  transition:0.6s ease;
+  box-shadow:0 20px 45px rgba(0,0,0,0.18);
+}
+
+.slide::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:35px;
+  background:linear-gradient(to top,rgba(0,0,0,0.2),transparent);
+}
+
+.slide img:hover{
+  transform:scale(1.06) rotate(1deg);
+  box-shadow:0 25px 60px rgba(255,105,160,0.3);
+}
+
+@keyframes scroll{
+  0%{
+    transform:translateX(0);
+  }
+
+  100%{
+    transform:translateX(calc(-398px * 5));
+  }
+}
+
+/* LOVE SECTION */
+
+.love-section{
+  padding:40px 20px 120px;
+  position:relative;
+  z-index:2;
+}
+
+.love-card{
+  max-width:900px;
+  margin:auto;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(20px);
+  border-radius:35px;
+  padding:55px 40px;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+  position:relative;
+  overflow:hidden;
+}
+
+.love-card::before{
+  content:'❤️';
+  position:absolute;
+  font-size:140px;
+  right:20px;
+  top:10px;
+  opacity:0.06;
+  animation:heartBeat 2s infinite;
+}
+
+@keyframes heartBeat{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.12);}
+}
+
+.love-card h3{
+  font-size:2.2rem;
+  color:#ff4f87;
+  margin-bottom:20px;
+}
+
+.love-card p{
+  font-size:1.15rem;
+  line-height:2rem;
+  color:#5c4450;
+}
+
+.footer{
+  text-align:center;
+  padding:40px 20px 60px;
+  color:#8d6a75;
+  position:relative;
+  z-index:2;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .envelope{
+    width:360px;
+    height:260px;
+  }
+
+  .flap{
+    height:150px;
+  }
+
+  .letter{
+    top:90px;
+    width:92%;
+    padding:30px 20px;
+  }
+
+  .envelope.open .letter{
+    transform:translateX(-50%) translateY(-170px);
+  }
+
+  .title{
+    font-size:3rem;
+  }
+
+  .message{
+    font-size:0.98rem;
+    line-height:1.8rem;
+  }
+
+  .gallery-title{
+    font-size:2.3rem;
+  }
+
+  .slide{
+    width:280px;
+  }
+
+  .slide img{
+    height:380px;
+  }
+
+  .slide-track{
+    width:calc(298px * 10);
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="sparkles">
+  <span style="top:10%; left:15%; animation-delay:0s"></span>
+  <span style="top:20%; left:80%; animation-delay:1s"></span>
+  <span style="top:70%; left:10%; animation-delay:2s"></span>
+  <span style="top:60%; left:65%; animation-delay:3s"></span>
+  <span style="top:35%; left:45%; animation-delay:4s"></span>
+  <span style="top:80%; left:85%; animation-delay:5s"></span>
+</div>
+
+<div class="hearts">
+  <span style="left:5%; animation-duration:12s;"></span>
+  <span style="left:15%; animation-duration:9s;"></span>
+  <span style="left:28%; animation-duration:11s;"></span>
+  <span style="left:40%; animation-duration:13s;"></span>
+  <span style="left:52%; animation-duration:10s;"></span>
+  <span style="left:65%; animation-duration:14s;"></span>
+  <span style="left:78%; animation-duration:9s;"></span>
+  <span style="left:90%; animation-duration:12s;"></span>
+</div>
+
+<section class="hero">
+
+<div class="glow"></div>
+<div class="glow"></div>
+
+<div class="envelope-wrapper">
+
+<div class="envelope" id="envelope" onclick="openLetter()">
+
+<div class="envelope-back"></div>
+<div class="flap"></div>
+
+<div class="letter">
+
+<h1 class="title">
+Happy Mother's Day Amma ❤️
+</h1>
+
+<p class="message">
+To Our Lovely Amma ❤️ <br>
+Your smile gives us peace, <br>
+your care gives us strength, <br>
+and your love gives us everything ✨ <br>
+You are the strongest person I know 💖 <br>
+Happy Mother’s Day.
+</p>
+
+<a href="#gallery" class="btn">
+Love You Amma 💖
+</a>
+
+</div>
+
+</div>
+
+<p class="tap-text">💌 Tap the envelope Amma 💌</p>
+
+</div>
+
+</section>
+
+<section class="gallery" id="gallery">
+
+<h2 class="gallery-title">Beautiful Memories ✨</h2>
+
+<div class="slider">
+<div class="slide-track">
+
+<div class="slide">
+<img src="WhatsApp Image 2026-05-09 at 21.51.20.jpeg">
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-05-09 at 21.51.39.jpeg">
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-05-09 at 21.52.11.jpeg">
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-05-09 at 21.53.01.jpeg">
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-05-09 at 21.51.20.jpeg">
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-05-09 at 21.51.39.jpeg">
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-05-09 at 21.52.11.jpeg">
+</div>
+
+<div class="slide">
+<img src="WhatsApp Image 2026-05-09 at 21.53.01.jpeg">
+</div>
+
+</div>
+</div>
+
+</section>
+
+<section class="love-section">
+
+<div class="love-card">
+
+<h3>For The Most Precious Person 💕</h3>
+
+<p>
+Thank you Amma for every little sacrifice, every smile, and every moment of love you give us every single day. Your kindness, warmth, and strength make our world brighter and happier ✨
+</p>
+
+</div>
+
+</section>
+
+<div class="footer">
+Made with endless love for Amma ❤️
+</div>
+
+<script>
+
+function openLetter(){
+  document.getElementById('envelope').classList.toggle('open');
+}
+
+</script>
+
+</body>
+</html>
